@@ -1,19 +1,19 @@
 # RoughCut Roadmap
 
-## DROP_0001 — Visual Foundation
-Lock the basic language with a small playable material set.
+## DROP 0001 — Foundation
+Project structure, initial style rules, first prototype tiles.
 
-## DROP_0002 — Overworld Construction Kit
-Expand stone variants, wood families, bricks, logs, leaves, common terrain, doors/trapdoors, crafting stations, and starter utility blocks. Refine from Drop 0001 screenshots.
+## DROP 0002 — Material Language
+First serious art pass. Refined core materials plus cobble/deepslate, logs, copper, utility blocks, and expanded ores. Adds hardened bootstrap/validation workflow.
 
-## DROP_0003 — Industrial / Mining Identity
-Complete ores, raw/processed metals, rails, redstone machinery, chains, copper families, furnaces, anvils, and industrial warning language.
+## DROP 0003 — Terrain Cohesion
+Stone families, soil/sand/gravel, full common wood families, leaves/foliage, water/lava review.
 
-## DROP_0004 — Items + HUD Prototype
-Establish item illustration rules and the first original RoughCut GUI treatment.
+## DROP 0004 — Building & Industry
+Masonry, metals, redstone components, rails, doors/trapdoors, workstations, storage.
 
-## DROP_0005 — Creatures / Effects Prototype
-Test entity ink language, particles, and impact/readability rules.
+## DROP 0005 — Items & HUD Prototype
+Tool/weapon icon language and a limited UI proof-of-concept.
 
-## Later — RoughCut Mod
-Once the visual system is stable, explore code-driven features that cannot be delivered cleanly through a resource pack alone: silhouette rendering, loot rarity visuals, damage numbers, procedural gear, animated comic UI, custom mobs, skills, and world content.
+## Later
+Entities, armor, particles, paintings, environment, sound treatment where useful, optional rendering layer, and eventually the separate gameplay/mod project.

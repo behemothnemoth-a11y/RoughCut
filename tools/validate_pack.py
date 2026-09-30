@@ -1,60 +1,62 @@
-#!/usr/bin/env python3
 from pathlib import Path
-import json, struct, sys
+from PIL import Image
+import json, sys
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED = [
-    'stone.png', 'dirt.png', 'grass_block_top.png', 'grass_block_side.png',
-    'grass_block_side_overlay.png', 'oak_planks.png', 'iron_block.png',
-    'glass.png', 'redstone_ore.png', 'diamond_ore.png'
-]
-BLOCK = ROOT / 'assets/minecraft/textures/block'
-
-def png_size(path):
-    with path.open('rb') as f:
-        sig = f.read(8)
-        if sig != b'\x89PNG\r\n\x1a\n':
-            raise ValueError('bad PNG signature')
-        length = struct.unpack('>I', f.read(4))[0]
-        typ = f.read(4)
-        if typ != b'IHDR' or length < 8:
-            raise ValueError('missing IHDR')
-        return struct.unpack('>II', f.read(8))
-
 errors = []
-meta = ROOT / 'pack.mcmeta'
-if not meta.exists():
-    errors.append('missing pack.mcmeta')
+warnings = []
+
+mcmeta = ROOT / "pack.mcmeta"
+if not mcmeta.exists():
+    errors.append("missing pack.mcmeta")
 else:
     try:
-        data = json.loads(meta.read_text(encoding='utf-8'))
-        p = data['pack']
-        if p.get('min_format') != [88, 0] or p.get('max_format') != [88, 0]:
-            errors.append('pack format is not locked to 88.0')
+        data = json.loads(mcmeta.read_text(encoding="utf-8"))
+        pack = data.get("pack", {})
+        if pack.get("min_format") != [88, 0] or pack.get("max_format") != [88, 0]:
+            errors.append("pack.mcmeta is not locked to resource-pack format 88.0")
     except Exception as e:
-        errors.append(f'pack.mcmeta invalid: {e}')
+        errors.append(f"invalid pack.mcmeta: {e}")
 
-if not (ROOT/'pack.png').exists():
-    errors.append('missing pack.png')
+if not (ROOT/"pack.png").exists():
+    errors.append("missing pack.png")
 
-for name in EXPECTED:
-    path = BLOCK / name
-    if not path.exists():
-        errors.append(f'missing texture: {name}')
-        continue
-    try:
-        w, h = png_size(path)
-        if (w, h) != (32, 32):
-            errors.append(f'{name}: expected 32x32, got {w}x{h}')
-    except Exception as e:
-        errors.append(f'{name}: {e}')
+block = ROOT/"assets/minecraft/textures/block"
+if not block.exists():
+    errors.append("missing block texture folder")
+else:
+    for p in sorted(block.glob("*.png")):
+        try:
+            im = Image.open(p)
+            im.verify()
+            with Image.open(p) as im2:
+                if im2.size != (32,32):
+                    errors.append(f"{p.name}: expected 32x32, got {im2.size}")
+        except Exception as e:
+            errors.append(f"{p.name}: invalid PNG ({e})")
 
+required = [
+    "stone.png","cobblestone.png","deepslate.png","dirt.png",
+    "grass_block_top.png","grass_block_side.png","grass_block_side_overlay.png",
+    "oak_planks.png","oak_log.png","oak_log_top.png",
+    "iron_block.png","copper_block.png","cut_copper.png","glass.png",
+    "redstone_ore.png","diamond_ore.png","iron_ore.png","gold_ore.png",
+    "crafting_table_top.png","crafting_table_side.png","crafting_table_front.png",
+    "furnace_top.png","furnace_side.png","furnace_front.png",
+    "barrel_side.png","barrel_top.png","barrel_bottom.png",
+]
+for name in required:
+    if not (block/name).exists():
+        errors.append(f"missing expected texture: {name}")
+
+print("=== RoughCut Validator ===")
+print(f"Root: {ROOT}")
+print(f"Block PNGs: {len(list(block.glob('*.png'))) if block.exists() else 0}")
+if warnings:
+    for w in warnings:
+        print("WARNING:",w)
 if errors:
-    print('ROUGH CUT VALIDATION: FAIL')
     for e in errors:
-        print(' -', e)
+        print("ERROR:",e)
     sys.exit(1)
-
-print('ROUGH CUT VALIDATION: PASS')
-print('Target: Minecraft Java 26.2 / Resource Pack 88.0')
-print(f'Prototype textures: {len(EXPECTED)}')
+print("PASS")

@@ -1,20 +1,8 @@
-$ErrorActionPreference = 'Stop'
-$RepoRoot = Split-Path -Parent $PSScriptRoot
-$ReleaseDir = Join-Path $RepoRoot 'release'
-$OutZip = Join-Path $ReleaseDir 'RoughCut_26.2_DROP_0001_pack.zip'
-
-New-Item -ItemType Directory -Force -Path $ReleaseDir | Out-Null
-
-if (Get-Command python -ErrorAction SilentlyContinue) {
-    & python (Join-Path $PSScriptRoot 'validate_pack.py')
-    if ($LASTEXITCODE -ne 0) { throw 'Validation failed.' }
-}
-
-if (Test-Path $OutZip) { Remove-Item $OutZip -Force }
-Compress-Archive -Path `
-    (Join-Path $RepoRoot 'pack.mcmeta'), `
-    (Join-Path $RepoRoot 'pack.png'), `
-    (Join-Path $RepoRoot 'assets') `
-    -DestinationPath $OutZip -CompressionLevel Optimal
-
-Write-Host "Created: $OutZip" -ForegroundColor Green
+$ErrorActionPreference = "Stop"
+$Repo = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+$Release = Join-Path $Repo "release"
+New-Item -ItemType Directory -Force -Path $Release | Out-Null
+$Out = Join-Path $Release "RoughCut_26.2_DROP_0002_pack.zip"
+if (Test-Path $Out) { Remove-Item $Out -Force }
+Compress-Archive -Path (Join-Path $Repo "pack.mcmeta"), (Join-Path $Repo "pack.png"), (Join-Path $Repo "assets") -DestinationPath $Out -Force
+Write-Host "Created $Out" -ForegroundColor Green

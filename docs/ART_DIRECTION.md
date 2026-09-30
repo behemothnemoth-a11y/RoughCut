@@ -1,62 +1,44 @@
-# RoughCut Art Direction — v0.1
+# RoughCut Art Direction — v0.2
 
 ## Core statement
-
 RoughCut should look like Minecraft was illustrated by hand with an ink pen, broad digital paint, and a dirty print process — while remaining immediately readable as Minecraft.
 
-## Four pillars
+## v0.2 refinement
+Drop 0002 moves away from the first-pass procedural/noise feel and toward authored, readable shapes.
 
-### 1. Aggressive, imperfect ink
-- Use near-black rather than pure black for most line work.
-- Lines should vary in length, thickness, and direction.
-- Favor broken seams, cracks, scratches, and material contours over full rectangular borders.
-- A texture should never look vector-perfect.
+### Selective ink
+- Never outline a block face simply because an edge exists.
+- Ink should describe fractures, panel seams, cavities, bark cuts, plank seams, mineral pockets, or wear.
+- Thick dark marks are focal accents; most line work stays one pixel at 32×32.
+- Repetition is more damaging than low detail. A quiet tile is preferable to a tile full of repeated marks.
 
-### 2. Big value shapes
-- Prefer a few strong light/mid/shadow regions over uniform pixel noise.
-- Shadows may be exaggerated to give a cel-painted/comic impression.
-- Highlights should describe the material, not simply trace every edge.
+### Large value breaks
+- Each texture should read in 3–5 major value regions before small marks are added.
+- Shadow shapes should be angular and intentional rather than evenly distributed noise.
+- Highlights belong on planes and material features, not every outer edge.
 
-### 3. Material personality
-- Stone: angular fractures, slabs, sparse hatch marks.
-- Dirt: clods, cuts, small roots/scratches, compressed shadow pockets.
-- Grass: chunky blade groups and torn silhouette transitions.
-- Wood: inked seams, knots, gouges, broad grain sweeps.
-- Metal: hard value breaks, scuffs, panel marks, cold highlights.
-- Glass: empty space first; only enough ink/reflection to read the plane.
-- Ores: deposits should feel embedded in cracks/cavities rather than pasted dots.
+### Hatching
+- Use short groups, usually 2–4 strokes.
+- Hatching should reinforce a local shadow or roughness change.
+- Do not hatch every material equally. Glass should have almost none; deepslate can carry more.
 
-### 4. Controlled dirt
-- Grime is a compositional tool, not a noise filter.
-- Put dirt where it explains wear, creases, cavities, and contact.
-- Every surface should still have quiet areas.
+### Material identity
+- Stone: slab-like planes, fractures, cool dirty gray.
+- Cobble: individual stones with broken dark mortar, not uniform black grout.
+- Deepslate: flatter, darker plates with restrained directional hatch.
+- Dirt: warm clods, calm midtone fields, root/scratch accents.
+- Grass: grouped blades and torn transitions, not dense leaf noise.
+- Oak: strong plank/bark rhythm, knots, broad grain.
+- Iron: cold plate values, scuffs, hard highlights.
+- Copper: warm plate values with sparse oxidized marks.
+- Glass: transparency first; only a few strong reflections.
+- Ores: bright mineral clusters embedded in dark cavities.
 
-## Base resolution
+## Color discipline
+Bright chroma remains scarce. Natural/building materials are muted so redstone, diamond, gold, future UI signals, and eventual loot systems can carry stronger saturation.
 
-32×32 is the standard production resolution. It gives enough room for ink rhythm and hatching while preserving Minecraft's pixel character. Higher-resolution exceptions should be deliberate and documented.
+## No copied game assets
+RoughCut studies broad cel-ink/comic rendering principles only. Do not trace or reproduce Borderlands textures, logos, characters, UI layouts, manufacturer symbols, or weapon skins.
 
-## Ink behavior
-
-Do **not** draw a continuous dark perimeter around every block texture. Repeated blocks would become a distracting checkerboard. Instead:
-
-- place short dark edge accents irregularly;
-- draw internal cracks and material seams;
-- allow lines to terminate abruptly;
-- use neighboring value contrast to imply form;
-- reserve eventual global silhouettes for the future rendering/mod layer.
-
-## Hatching
-
-Hatching should be sparse. Use it to reinforce a shadow plane or rough material, not as wallpaper. Typical groups are 2–5 short parallel strokes with imperfect spacing.
-
-## Color
-
-RoughCut uses a restrained palette per texture. A normal block should generally stay within roughly 6–10 purposeful colors before biome tinting/transparency. Saturation is reserved for signals, ores, magic, UI accents, and future loot systems.
-
-## Originality rule
-
-The project may study broad comic/cel-ink techniques, but it must not trace, extract, recolor, or reproduce Borderlands textures, logos, manufacturer marks, UI layouts, character art, weapon skins, or proprietary symbols. RoughCut needs its own visual identity.
-
-## Future mod compatibility
-
-The resource pack establishes the visual grammar. A later RoughCut mod can add features that a resource pack cannot reliably provide alone: dynamic silhouettes, stylized damage numbers, loot beams, rarity treatments, animated UI, procedural weapons, custom entities, and world systems.
+## Future rendering layer
+The resource pack establishes surface language. Global silhouettes, dynamic rim lines, damage numbers, loot beams, procedural weapon rendering, animated UI, and similar effects belong to a later optional Fabric/rendering layer.

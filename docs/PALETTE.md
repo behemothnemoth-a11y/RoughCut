@@ -1,33 +1,36 @@
-# RoughCut Palette — Starter Set
+# RoughCut Palette — v0.2 Starter Set
 
-This is a **working palette**, not a permanent hard limit. Keep the shared neutrals consistent so different material families belong to the same world.
+| Role | Hex |
+|---|---|
+| Ink | `#171515` |
+| Deep ink | `#0E0D0D` |
+| Warm shadow | `#2A2726` |
+| Stone mid | `#7E7A75` |
+| Stone light | `#99948C` |
+| Dirt deep | `#3A251B` |
+| Dirt mid | `#67412A` |
+| Dirt light | `#9A6840` |
+| Grass deep | `#334126` |
+| Grass mid | `#59693A` |
+| Grass light | `#869758` |
+| Metal deep | `#34383A` |
+| Metal mid | `#777D7E` |
+| Metal light | `#BEC3C0` |
+| Copper deep | `#81513C` |
+| Copper mid | `#A96341` |
+| Copper light | `#CF804F` |
+| Oxide accent | `#4D7865` |
+| Signal red | `#C93635` |
+| Signal red light | `#F06A4F` |
+| Crystal cyan | `#24AAB3` |
+| Crystal light | `#8CE4DF` |
+| Iron ore | `#BB8562` |
+| Gold | `#D3A12C` |
+| Gold light | `#F9D969` |
+| Utility amber | `#D79A2B` |
 
-| Role | Hex | Use |
-|---|---|---|
-| Ink | `#171515` | primary near-black line work |
-| Deep ink | `#0E0D0D` | rare deepest cavities |
-| Warm shadow | `#2A2726` | neutral dirty shadow |
-| Paper gray | `#9B9690` | stone/neutral midpoint |
-| Dust light | `#C1B8A8` | warm highlight |
-| Dirt deep | `#3A251B` | dirt cavities |
-| Dirt mid | `#67412A` | earth base |
-| Dirt light | `#9A6840` | exposed earth highlight |
-| Grass deep | `#334126` | dark vegetation |
-| Grass mid | `#59693A` | vegetation base |
-| Grass light | `#869758` | vegetation highlight |
-| Metal deep | `#34383A` | iron shadow |
-| Metal mid | `#777D7E` | iron base |
-| Metal light | `#BEC3C0` | iron highlight |
-| Signal red | `#C93635` | redstone / warnings |
-| Signal red light | `#F06A4F` | redstone hot accent |
-| Crystal cyan | `#24AAB3` | diamond base |
-| Crystal light | `#8CE4DF` | diamond highlight |
-| Utility amber | `#D79A2B` | future industrial/hazard accent |
-
-## Palette rules
-
-1. Near-black ink should recur across almost every family.
-2. Warm neutrals keep the world from feeling sterile.
-3. Bright chroma is scarce, making ores/signals/items pop.
-4. Avoid smooth gradients in standard 32× textures. Use stepped value shapes instead.
-5. New colors should solve a material problem, not merely add noise.
+## Rules
+1. Reuse shared neutrals and ink logic across families.
+2. Use bright saturation for signals, minerals, magic, UI accents, and eventual loot language.
+3. Prefer stepped values over smooth gradients.
+4. New colors must solve a material problem.

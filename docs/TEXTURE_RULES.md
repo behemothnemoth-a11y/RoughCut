@@ -1,76 +1,54 @@
-# RoughCut Texture Rules — v0.1
+# RoughCut Texture Rules — v0.2
 
 ## Canvas
-- Standard: **32×32 px**.
-- Work at native resolution; upscale previews with nearest-neighbor only.
-- Do not use soft blur.
-- Semi-transparent pixels are normally reserved for materials that genuinely need alpha, such as glass.
+- Standard block texture: **32×32 px**.
+- Nearest-neighbor scaling only for previews.
+- No blur or photographic filtering.
+- Alpha is reserved for materials that need it.
 
-## Value structure
-Every texture should survive a grayscale check. Aim for:
-1. one dominant midtone;
-2. one broad shadow family;
-3. one smaller highlight family;
-4. near-black ink accents.
+## Approval order
+1. Silhouette/material recognition.
+2. Major light/mid/shadow regions.
+3. Selective ink.
+4. Material marks.
+5. Hatching/grime.
+6. 5×5 tiling test.
+7. In-game mipmap/distance test.
 
-## Ink density
-- Typical coverage target: roughly 5–14% dark ink-like pixels.
-- Ores/tech may exceed this locally.
-- Quiet areas are mandatory.
-- Avoid full-frame borders.
-
-## Line vocabulary
-Allowed line families:
-- broken contour;
-- fracture;
-- short parallel hatching;
-- gouge/scratch;
-- panel seam;
-- small cross mark at stress points.
-
-Avoid:
-- perfectly uniform outlines;
-- identical crack motifs repeated across the tile;
-- random one-pixel salt-and-pepper noise;
-- dense hatching across the entire face.
+## Ink
+- Typical coverage: 4–12% of pixels.
+- Avoid continuous frame borders.
+- Use broken contours, fractures, seams, gouges, scratches, and short hatch groups.
+- One strong mark is better than ten random marks.
 
 ## Tiling
-Before approval, inspect each texture in at least a 5×5 repeat. No accidental vertical/horizontal stripe may dominate at normal play distance. Intentional structures such as planks are exceptions.
+- Every standard block must survive a 5×5 repeat preview.
+- Do not let a unique crack land in the same visually dominant location on every tile.
+- Intentional horizontal/vertical rhythms such as planks are allowed but should include variation.
 
-## Minecraft readability
-A texture must still communicate the vanilla material at a glance. Stylization can exaggerate; it should not destroy gameplay recognition.
+## Value
+Every texture should remain readable in grayscale:
+- dominant midtone;
+- broad shadow family;
+- limited highlight family;
+- near-black accents.
 
-## Biome tint
-Grass/foliage textures must be checked in at least plains, forest, swamp, and dry/warm conditions before final approval. The first prototype only establishes the structure.
+## Distance
+Review at:
+- 1–3 blocks;
+- 10–20 blocks;
+- 40+ blocks with normal mipmapping.
 
-## Mipmaps and distance
-Review at close range, 10–20 blocks, and 40+ blocks. If all ink collapses into black mud in mipmaps, reduce density or increase shape size.
+If the texture becomes dark mud at distance, reduce ink or enlarge shapes.
 
-## Material-specific rules
-### Stone
-Use chunky planes and angular fractures. Avoid pebble noise.
+## Biome-tinted assets
+Grass/foliage structure should remain readable in plains, forest, swamp, and warm/dry biomes. Do not bake a strong green hue into an overlay that Minecraft will tint again.
 
-### Dirt
-Use irregular clods and compressed dark pockets. Keep some larger calm brown fields.
+## Transparent materials
+Glass should remain mostly empty. Do not create a black grid around every glass block.
 
-### Wood
-Board seams may be strong; grain should be broad and irregular. Avoid photorealistic wood grain.
+## Originality
+Do not copy proprietary textures, symbols, logos, UI arrangements, or characters from other games.
 
-### Metal
-Use hard value transitions, scuffs, dents, and sparse directional scratches.
-
-### Glass
-Transparency dominates. Reflection marks should be bold enough to read but sparse enough to see through.
-
-### Ore
-Ore should occupy cracks, cavities, or geometric mineral clusters. Use near-black around bright deposits to increase graphic separation.
-
-## Batch approval checklist
-- [ ] 32×32 source
-- [ ] Vanilla material still readable
-- [ ] No accidental full border
-- [ ] Repeats cleanly
-- [ ] Ink remains legible with mipmaps
-- [ ] Palette matches family
-- [ ] No copied proprietary art/symbols
-- [ ] Screenshot captured in test matrix
+## Drop 0002 batch
+The v0.2 vertical slice covers natural terrain, wood, industrial blocks, core workstations, glass, and four ore families to test one coherent visual language across very different materials.
