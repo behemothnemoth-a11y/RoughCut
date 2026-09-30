@@ -8,39 +8,35 @@ The project studies broad illustrated/cel-ink techniques without copying proprie
 - Minecraft: Java Edition **26.2**
 - Resource Pack format **88.0**
 - Base block texture resolution: **32×32**
-- Current milestone: **DROP_0002 / v0.2 — Material Language**
+- Current milestone: **DROP_0003 / v0.3 — Stone + Earth Foundation**
 
-## Drop 0002
-The first serious art pass expands and redraws the vertical slice:
+## Drop 0003
+Drop 0003 converts the approved stone/earth image-generation exploration into real 32×32 Minecraft textures. It replaces the earlier natural-material prototypes and adds several missing world-foundation materials.
 
-### Natural
+### Stone family
 - Stone
 - Cobblestone
 - Deepslate
+- Stone bricks
+- Cracked stone bricks
+- Gravel
+- Mossy cobblestone
+
+### Earth family
 - Dirt
-- Grass top / side / tint overlay
+- Coarse dirt
+- Rooted dirt
+- Grass block top
+- Grass block side + biome-tinted overlay
 
-### Wood
-- Oak planks
-- Oak log side / top
-- Barrel side / top / bottom
-
-### Industrial / utility
-- Iron block
-- Copper block
-- Cut copper
-- Glass
-- Crafting table top / side / front
-- Furnace top / side / front
-
-### Ores
-- Redstone
-- Diamond
-- Iron
-- Gold
+The earlier wood, industrial, utility, glass, and ore prototypes remain present for comparison, but **stone + earth are the approved focus of this drop**.
 
 ## Principle
 RoughCut should not look like Minecraft with a uniform black grid drawn over it. Ink is selective and explains form. Global silhouettes belong to a future optional rendering/mod layer.
 
+## References
+- `reference/style-tests/roughcut_drop_0003_stone_earth_reference.png` — approved material reference grid
+- `reference/style-tests/roughcut_drop_0003_implementation_preview.png` — the actual 32×32 pack textures enlarged with nearest-neighbor scaling
+
 ## Testing
-See `docs/TEST_MATRIX.md`. Test without shaders first and review repeated walls, distance mipmaps, glass visibility, biome tinting, and cross-material cohesion.
+See `docs/TEST_MATRIX.md` and `docs/STONE_EARTH_PASS.md`. Test without shaders first. Review repeated walls/floors, mipmaps, biome tint, natural transitions, and whether the stronger ink stays readable at normal play distance.

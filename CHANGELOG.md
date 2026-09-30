@@ -1,5 +1,15 @@
 # Changelog
 
+## DROP 0003 — v0.3 Stone + Earth Foundation
+- Promoted the approved image-generated stone/earth exploration into playable 32×32 textures.
+- Rebuilt stone, cobblestone, deepslate, dirt, grass top, and grass side around the stronger approved visual direction.
+- Added stone bricks and cracked stone bricks.
+- Added coarse dirt, rooted dirt, gravel, and mossy cobblestone.
+- Preserved biome tinting by separating the grass-side fringe into a grayscale alpha overlay.
+- Added the approved material reference grid and an implementation preview generated from the actual pack PNGs.
+- Added `docs/STONE_EARTH_PASS.md` with in-game review criteria and known limitations.
+- Updated the validator and release packager for Drop 0003.
+
 ## DROP 0002 — v0.2 Material Language
 - Redrew the original vertical-slice materials around larger value shapes and more selective ink.
 - Added cobblestone and deepslate.

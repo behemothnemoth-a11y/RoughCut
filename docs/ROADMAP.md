@@ -1,19 +1,14 @@
 # RoughCut Roadmap
 
-## DROP 0001 — Foundation
-Project structure, initial style rules, first prototype tiles.
+## Completed
+- **DROP 0001 — Visual Foundation:** repo/pack structure and first tiny vertical slice.
+- **DROP 0002 — Material Language:** expanded prototype across natural, wood, industrial, utility, glass, and ores.
+- **DROP 0003 — Stone + Earth Foundation:** approved image-gen art direction converted into playable natural-world textures.
 
-## DROP 0002 — Material Language
-First serious art pass. Refined core materials plus cobble/deepslate, logs, copper, utility blocks, and expanded ores. Adds hardened bootstrap/validation workflow.
-
-## DROP 0003 — Terrain Cohesion
-Stone families, soil/sand/gravel, full common wood families, leaves/foliage, water/lava review.
-
-## DROP 0004 — Building & Industry
-Masonry, metals, redstone components, rails, doors/trapdoors, workstations, storage.
-
-## DROP 0005 — Items & HUD Prototype
-Tool/weapon icon language and a limited UI proof-of-concept.
-
-## Later
-Entities, armor, particles, paintings, environment, sound treatment where useful, optional rendering layer, and eventually the separate gameplay/mod project.
+## Next
+1. In-game stone/earth repeat and biome-tint testing.
+2. Hand-correct any tiling stamps or mipmap failures.
+3. Image-gen refinement board for the wood family.
+4. Implement wood family once approved.
+5. Repeat for metal/utility and ores.
+6. Expand into items, GUI, entities, particles, environment, and eventually the optional rendering/mod layer.
