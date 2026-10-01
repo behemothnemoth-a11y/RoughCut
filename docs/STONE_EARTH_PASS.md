@@ -33,3 +33,6 @@ Check specifically:
 
 ## Known limitation
 The approved concept board was generated as an art-direction reference, not as a mathematically seamless source atlas. DROP 0003 performs a light edge reconciliation when reducing the concepts to 32×32, but the real verdict must come from in-game repeated surfaces. Any obvious tiling stamps should be corrected by hand in the next refinement drop rather than hidden with procedural noise.
+
+## DROP 0004 follow-up
+The approved DROP 0003 hero textures remain the source of truth. DROP 0004 adds vanilla weighted alternates to reduce the world-scale repetition observed in the first live test. Variants should be judged as a surface system, not as isolated thumbnails.

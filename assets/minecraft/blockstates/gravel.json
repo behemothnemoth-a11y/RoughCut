@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/roughcut/variants/gravel_a",
+        "weight": 4
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/gravel_b",
+        "weight": 3
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/gravel_c",
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/gravel_d",
+        "weight": 1
+      }
+    ]
+  }
+}

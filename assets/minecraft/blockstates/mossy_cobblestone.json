@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/roughcut/variants/mossy_cobblestone_a",
+        "weight": 4
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/mossy_cobblestone_b",
+        "weight": 3
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/mossy_cobblestone_c",
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/mossy_cobblestone_d",
+        "weight": 1
+      }
+    ]
+  }
+}

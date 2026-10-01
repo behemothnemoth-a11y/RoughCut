@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/roughcut/variants/stone_bricks_a",
+        "weight": 4
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/stone_bricks_b",
+        "weight": 3
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/stone_bricks_c",
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/stone_bricks_d",
+        "weight": 1
+      }
+    ]
+  }
+}

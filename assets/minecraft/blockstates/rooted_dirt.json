@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/roughcut/variants/rooted_dirt_a",
+        "weight": 4
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/rooted_dirt_b",
+        "weight": 3
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/rooted_dirt_c",
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/rooted_dirt_d",
+        "weight": 1
+      }
+    ]
+  }
+}

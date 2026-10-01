@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/grass_block",
+  "textures": {
+    "particle": "minecraft:block/roughcut_variants/dirt_a",
+    "bottom": "minecraft:block/roughcut_variants/dirt_a",
+    "top": "minecraft:block/roughcut_variants/grass_block_top_a",
+    "side": "minecraft:block/roughcut_variants/grass_block_side_a",
+    "overlay": "minecraft:block/roughcut_variants/grass_block_side_overlay_a"
+  }
+}

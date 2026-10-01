@@ -1,0 +1,70 @@
+{
+  "variants": {
+    "axis=x": [
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_a",
+        "weight": 4,
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_b",
+        "weight": 3,
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_c",
+        "weight": 2,
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_d",
+        "weight": 1,
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis=y": [
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_a",
+        "weight": 4
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_b",
+        "weight": 3
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_c",
+        "weight": 2
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_d",
+        "weight": 1
+      }
+    ],
+    "axis=z": [
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_a",
+        "weight": 4,
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_b",
+        "weight": 3,
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_c",
+        "weight": 2,
+        "x": 90
+      },
+      {
+        "model": "minecraft:block/roughcut/variants/deepslate_d",
+        "weight": 1,
+        "x": 90
+      }
+    ]
+  }
+}

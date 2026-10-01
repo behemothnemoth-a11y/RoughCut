@@ -52,3 +52,6 @@ Do not copy proprietary textures, symbols, logos, UI arrangements, or characters
 
 ## Drop 0002 batch
 The v0.2 vertical slice covers natural terrain, wood, industrial blocks, core workstations, glass, and four ore families to test one coherent visual language across very different materials.
+
+## Variation rule — v0.4
+Hero texture A defines the family. Alternates must break recognizable stamps without changing material identity. Avoid brightness jumps large enough to create a checkerboard. Weighted variants should be reviewed as 12×12 or larger surfaces.
